@@ -1,6 +1,6 @@
 {
-  "name": "server",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "api-server-lib",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/server/src",
   "projectType": "library",
   "tags": [],

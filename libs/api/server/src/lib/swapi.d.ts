@@ -106,9 +106,9 @@ export interface IVehicle {
 
 export enum ResourcesType {
   Films = 'films',
-    People = 'people',
-    Planets = 'planets',
-    Species = 'species',
-    Starships = 'starships',
-    Vehicles = 'vehicles',
+  People = 'people',
+  Planets = 'planets',
+  Species = 'species',
+  Starships = 'starships',
+  Vehicles = 'vehicles',
 }

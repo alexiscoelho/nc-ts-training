@@ -1,8 +1,7 @@
-
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
-import { apiClient } from '@app/client';
+import { apiClient } from '@nc-ts-training/api-client-lib';
 import NxWelcome from './nx-welcome';
 
 import './app.scss';
@@ -22,15 +21,13 @@ export function App() {
           }, */
         }),
       ],
-    }),
+    })
   );
 
   return (
     <apiClient.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <div>
-          <NxWelcome title="nc-ts-training" />
-        </div>
+        <NxWelcome title="nc-ts-training" />
       </QueryClientProvider>
     </apiClient.Provider>
   );
