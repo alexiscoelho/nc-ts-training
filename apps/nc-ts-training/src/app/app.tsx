@@ -12,7 +12,7 @@ export function App() {
     apiClient.createClient({
       links: [
         httpBatchLink({
-          url: 'http://localhost:4200',
+          url: 'http://localhost:3333/api',
           // You can pass any HTTP headers you wish here
           /* async headers() {
             return {

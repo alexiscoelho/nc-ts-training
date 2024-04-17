@@ -4,11 +4,19 @@ import { IFilm } from './swapi';
 
 export const appRouter = router({
   getFilms: publicProcedure.query<IFilm[]>(async () => {
-    const response = await fetch(ENDPOINTS.films);
+    console.log('getFilms 1:')
+    try {
+      const response = await fetch(ENDPOINTS.films);
 
-    const result = await response.json();
+      const result = await response.json();
 
-    return result.data;
+      return result;
+    } catch (error) {
+      console.log('error:', error)
+      return {
+        error: true
+      };
+    }
   }),
 });
 

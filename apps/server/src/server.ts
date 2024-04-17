@@ -6,15 +6,11 @@ import * as path from 'path';
 
 const app = express();
 
-// Check this for AWS lambda integration:
-// https://trpc.io/docs/server/adapters/aws-lambda
-// also, more about these trpc adapters:
-// https://trpc.io/docs/server/adapters/standalone
-
-
 app.use(
   cors({
     origin: [
+      'http://127.0.0.1:4200',
+      'http://localhost:4200',
       'http://127.0.0.1:4201',
       'http://localhost:4201',
     ],
@@ -39,12 +35,9 @@ app.use(
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to app-server!' });
-});
-
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
+
 server.on('error', console.error);
