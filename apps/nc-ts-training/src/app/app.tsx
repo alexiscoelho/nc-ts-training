@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
-import { apiClient } from '@nc-ts-training/api-client-lib';
+import { apiClient } from '@api/client-lib';
 import NxWelcome from './nx-welcome';
 
 import './app.scss';

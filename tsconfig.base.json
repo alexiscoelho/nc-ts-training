@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nc-ts-training/api-client-lib": ["libs/api/client/src/index.ts"],
-      "@nc-ts-training/api-server-lib": ["libs/api/server/src/index.ts"]
+      "@api/client-lib": ["libs/api/client/src/index.ts"],
+      "@api/server-lib": ["libs/api/server/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

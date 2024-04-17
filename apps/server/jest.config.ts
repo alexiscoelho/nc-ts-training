@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'server',
+  // displayName: 'server',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
