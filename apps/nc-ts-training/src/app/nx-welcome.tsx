@@ -1,19 +1,18 @@
 import { apiClient } from "@api/client-lib";
 
 export function NxWelcome() {
+  const moviesQuery = apiClient.getMovies.useQuery();
+  const movies = moviesQuery.data;
 
-  const filmsQuery = apiClient.getFilms.useQuery();
-  const results = filmsQuery.data?.results;
-
-  if (!results) {
+  if (!movies) {
     return 'Loading!';
   }
 
   return (
     <>
-        {results.map(film => <div>
-          <h2>{film.title}</h2>
-          <p>{film.producer}</p>
+        {movies.map(movie => <div>
+          <h2>{movie.title}</h2>
+          <p>{movie.description}</p>
         </div>)}
     </>
   );

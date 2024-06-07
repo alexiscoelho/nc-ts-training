@@ -1,6 +1,7 @@
 import { publicProcedure, router } from './trpc';
 import ENDPOINTS from './endpoints.constant';
 import { IFilm, IRequestResult, IRequestError } from './swapi';
+import { Movie } from './types';
 import movies from './mocks/movies.mock';
 
 export const appRouter = router({
@@ -19,7 +20,7 @@ export const appRouter = router({
       };
     }
   }),
-  getMovies: publicProcedure.query(() => {
+  getMovies: publicProcedure.query<Movie[]>(() => {
     return movies;
   }),
 });

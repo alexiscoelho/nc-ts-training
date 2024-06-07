@@ -14,6 +14,8 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strict": true,
+    "noImplicitAny": true,
     "paths": {
       "@api/client-lib": ["libs/api/client/src/index.ts"],
       "@api/server-lib": ["libs/api/server/src/index.ts"]
