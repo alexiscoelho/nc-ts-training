@@ -1,6 +1,7 @@
 import { publicProcedure, router } from './trpc';
 import ENDPOINTS from './endpoints.constant';
 import { IFilm, IRequestResult, IRequestError } from './swapi';
+import movies from './mocks/movies.mock';
 
 export const appRouter = router({
   getFilms: publicProcedure.query<IRequestResult<IFilm> | IRequestError>(async () => {
@@ -17,6 +18,9 @@ export const appRouter = router({
         msg: 'Error fetching'
       };
     }
+  }),
+  getMovies: publicProcedure.query(() => {
+    return movies;
   }),
 });
 
