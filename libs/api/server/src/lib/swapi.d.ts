@@ -14,6 +14,7 @@ export interface IFilm {
   url: string;
   vehicles: string[] | IVehicle[];
 }
+
 export interface IPeople {
   birth_year: string;
   eye_color: string;
@@ -32,6 +33,7 @@ export interface IPeople {
   url: string;
   vehicles: string[] | IVehicle[];
 }
+
 export interface IPlanet {
   climate: string;
   created: Date;
@@ -48,6 +50,7 @@ export interface IPlanet {
   terrain: string;
   url: string;
 }
+
 export interface ISpecie {
   average_height: string;
   average_lifespan: string;
@@ -65,6 +68,7 @@ export interface ISpecie {
   skin_colors: string;
   url: string;
 }
+
 export interface IStarship {
   MGLT: string;
   cargo_capacity: string;
@@ -85,6 +89,7 @@ export interface IStarship {
   starship_class: string;
   url: string;
 }
+
 export interface IVehicle {
   cargo_capacity: string;
   consumables: string;
@@ -102,6 +107,18 @@ export interface IVehicle {
   films: string[] | IFilm[];
   url: string;
   vehicle_class: string;
+}
+
+export interface IRequestResult<T> {
+  count: number;
+  next?: string;
+  previous?: string;
+  results: T[];
+}
+
+export interface IRequestError{
+  error: boolean;
+  msg: string;
 }
 
 export enum ResourcesType {

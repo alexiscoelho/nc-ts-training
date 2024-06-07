@@ -1,20 +1,20 @@
 import { apiClient } from "@api/client-lib";
 
-/*
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- This is a starter component and can be deleted.
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- Delete this file and get started with your project!
- * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- */
-export function NxWelcome({ title }: { title: string }) {
+export function NxWelcome() {
 
   const filmsQuery = apiClient.getFilms.useQuery();
+  const results = filmsQuery.data?.results;
 
+  if (!results) {
+    return 'Loading!';
+  }
 
   return (
     <>
-      <p>{filmsQuery.data ? JSON.stringify(filmsQuery.data) : ''}</p>
+        {results.map(film => <div>
+          <h2>{film.title}</h2>
+          <p>{film.producer}</p>
+        </div>)}
     </>
   );
 }

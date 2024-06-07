@@ -2,7 +2,11 @@
   "name": "@nc-ts-training/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run start:fe\" \"npm run start:be\"",
+    "start:fe": "nx serve nc-ts-training",
+    "start:be": "nx serve server"
+  },
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^4.36.1",
@@ -45,6 +49,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/coverage-v8": "^1.0.4",
     "@vitest/ui": "^1.3.1",
+    "concurrently": "^8.2.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.27.5",

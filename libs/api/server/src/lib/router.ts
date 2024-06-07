@@ -1,20 +1,20 @@
 import { publicProcedure, router } from './trpc';
 import ENDPOINTS from './endpoints.constant';
-import { IFilm } from './swapi';
+import { IFilm, IRequestResult, IRequestError } from './swapi';
 
 export const appRouter = router({
-  getFilms: publicProcedure.query<IFilm[]>(async () => {
-    console.log('getFilms 1:')
+  getFilms: publicProcedure.query<IRequestResult<IFilm> | IRequestError>(async () => {
     try {
       const response = await fetch(ENDPOINTS.films);
 
-      const result = await response.json();
+      const res = await response.json();
 
-      return result;
+      return res as IRequestResult<IFilm>;
     } catch (error) {
       console.log('error:', error)
       return {
-        error: true
+        error: true,
+        msg: 'Error fetching'
       };
     }
   }),
