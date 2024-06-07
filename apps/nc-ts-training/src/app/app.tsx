@@ -27,7 +27,7 @@ export function App() {
   return (
     <apiClient.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <NxWelcome title="nc-ts-training" />
+        <NxWelcome />
       </QueryClientProvider>
     </apiClient.Provider>
   );
